@@ -1,0 +1,20 @@
+
+<div>
+  <h4 class="title">Upload CSV</h4>
+</div>
+<%= form_tag({:action => :upload_csv}, multipart: true) do %>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="col-md-7 form-group">
+        <%= file_field_tag :file , class: "form-control border-input"%>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="col-md-7 form-group">
+        <%= submit_tag "Import", class: "form-control border-input"%>
+      </div>
+    </div>
+  </div>
+<% end %>
+<%= link_to 'Download Sample CSV', sample_csv_users_path, data: {turbolinks: "false"} %>
+
